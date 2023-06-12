@@ -1,0 +1,19 @@
+{
+  "additional_parameters": {
+    "token_url": {}
+  },
+  "auth": "oauth2",
+  "datatypes": {
+    "projects": {
+      "template": "templates/projects.json"
+    }
+  },
+  "oauth2": {
+    "login_url": "https://app.asana.com/-/oauth_authorize",
+    "scopes": [
+      "default"
+    ],
+    "token_url": "https://app.asana.com/-/oauth_token"
+  },
+  "system-template": "templates/system.json"
+}
