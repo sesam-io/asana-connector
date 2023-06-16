@@ -8,11 +8,21 @@
     "token_url": "{{@ token_url @}}"
   },
   "operations": {
-    "projects-list": {
+    "insert": {
+      "method": "POST",
+      "payload_property": "data",
+      "url": "{{ properties.parenttype }}/1204840626156719/projects"
+    },
+    "list": {
       "id_expression": "{{ gid }}",
       "method": "GET",
       "payload_property": "data",
-      "url": "projects"
+      "url": "{{ properties.datatype }}"
+    },
+    "lookup": {
+      "method": "GET",
+      "payload_property": "data",
+      "url": "{{ properties.datatype }}/{{ entity.gid }}"
     }
   },
   "type": "system:rest",
