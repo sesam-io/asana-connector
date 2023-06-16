@@ -6,6 +6,9 @@
   "datatypes": {
     "projects": {
       "template": "templates/projects.json"
+    },
+    "users": {
+      "template": "templates/users.json"
     }
   },
   "oauth2": {
