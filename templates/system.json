@@ -8,11 +8,6 @@
     "token_url": "{{@ token_url @}}"
   },
   "operations": {
-    "insert": {
-      "method": "POST",
-      "payload_property": "data",
-      "url": "{{ properties.parenttype }}/1204840626156719/projects"
-    },
     "list": {
       "id_expression": "{{ gid }}",
       "method": "GET",

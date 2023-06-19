@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-all",
+    "namespaced_identifiers": false,
+    "source": {
+      "operation": "list",
+      "properties": {
+        "datatype": "{{@ datatype @}}"
+      },
+      "system": "{{@ system @}}",
+      "type": "rest"
+    },
+    "type": "pipe"
+  },
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-collect",
+    "namespaced_identifiers": false,
+    "source": {
+      "completeness": false,
+      "dataset": "{{@ system @}}-{{@ datatype @}}-all",
+      "if_source_empty": "accept",
+      "type": "dataset"
+    },
+    "transform": [
+      {
+        "operation": "lookup",
+        "properties": {
+          "datatype": "{{@ datatype @}}"
+        },
+        "replace_entity": true,
+        "system": "{{@ system @}}",
+        "trace": true,
+        "type": "rest"
+      }
+    ],
+    "type": "pipe"
+  }
+]
