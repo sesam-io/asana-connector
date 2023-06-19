@@ -9,6 +9,9 @@
     },
     "users": {
       "template": "templates/users.json"
+    },
+    "workspaces": {
+      "template": "templates/workspaces.json"
     }
   },
   "oauth2": {
