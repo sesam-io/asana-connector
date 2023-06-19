@@ -8,6 +8,16 @@
     "token_url": "{{@ token_url @}}"
   },
   "operations": {
+    "delete": {
+      "method": "DELETE",
+      "payload_property": "data",
+      "url": "{{ properties.datatype }}/{{ entity.gid }}"
+    },
+    "insert": {
+      "method": "POST",
+      "payload_property": "data",
+      "url": "{{ properties.datatype }}"
+    },
     "list": {
       "id_expression": "{{ gid }}",
       "method": "GET",
@@ -16,6 +26,11 @@
     },
     "lookup": {
       "method": "GET",
+      "payload_property": "data",
+      "url": "{{ properties.datatype }}/{{ entity.gid }}"
+    },
+    "update": {
+      "method": "PUT",
       "payload_property": "data",
       "url": "{{ properties.datatype }}/{{ entity.gid }}"
     }
