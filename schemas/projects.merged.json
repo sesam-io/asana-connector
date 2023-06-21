@@ -1,0 +1,329 @@
+{
+  "$id": "/api/pipes/xxxxxx-projects-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "archived": {
+      "type": "boolean"
+    },
+    "color": {
+      "type": "string"
+    },
+    "completed": {
+      "type": "boolean"
+    },
+    "completed_at": {
+      "type": "null"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "current_status": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "properties": {
+            "author": {
+              "additionalProperties": true,
+              "properties": {
+                "gid": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "resource_type": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "color": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "created_by": {
+              "additionalProperties": true,
+              "properties": {
+                "gid": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "resource_type": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "gid": {
+              "type": "string"
+            },
+            "modified_at": {
+              "type": "string"
+            },
+            "resource_type": {
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "current_status_update": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "properties": {
+            "gid": {
+              "type": "string"
+            },
+            "resource_subtype": {
+              "type": "string"
+            },
+            "resource_type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "custom_field_settings": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "custom_field": {
+            "additionalProperties": true,
+            "properties": {
+              "enum_options": {
+                "items": {
+                  "additionalProperties": true,
+                  "properties": {
+                    "color": {
+                      "type": "string"
+                    },
+                    "enabled": {
+                      "type": "boolean"
+                    },
+                    "gid": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "resource_type": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "gid": {
+                "type": "string"
+              },
+              "is_formula_field": {
+                "type": "boolean"
+              },
+              "name": {
+                "type": "string"
+              },
+              "resource_subtype": {
+                "type": "string"
+              },
+              "resource_type": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "gid": {
+            "type": "string"
+          },
+          "is_important": {
+            "type": "boolean"
+          },
+          "parent": {
+            "additionalProperties": true,
+            "properties": {
+              "gid": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "resource_type": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "project": {
+            "additionalProperties": true,
+            "properties": {
+              "gid": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "resource_type": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "resource_type": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "custom_fields": {
+      "items": {
+        "anyOf": []
+      },
+      "type": "array"
+    },
+    "default_view": {
+      "type": "string"
+    },
+    "due_date": {
+      "type": "null"
+    },
+    "due_on": {
+      "type": "null"
+    },
+    "followers": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "gid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "resource_type": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "gid": {
+      "type": "string"
+    },
+    "members": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "gid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "resource_type": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "modified_at": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "owner": {
+      "additionalProperties": true,
+      "properties": {
+        "gid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "resource_type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "permalink_url": {
+      "type": "string"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "resource_type": {
+      "type": "string"
+    },
+    "start_on": {
+      "type": "null"
+    },
+    "team": {
+      "additionalProperties": true,
+      "properties": {
+        "gid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "resource_type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "workspace": {
+      "additionalProperties": true,
+      "properties": {
+        "gid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "resource_type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-projects-collect",
+  "type": "object"
+}
