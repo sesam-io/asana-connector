@@ -18,5 +18,6 @@
     ],
     "token_url": "https://app.asana.com/-/oauth_token"
   },
+  "system": "Asana",
   "system-template": "templates/system.json"
 }

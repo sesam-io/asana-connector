@@ -1,0 +1,41 @@
+{
+  "$id": "/api/pipes/xxxxxx-users-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "photo": {
+      "description": "Can also be null if there is no photo",
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "Object of profile picture links",
+          "properties": {
+            "image_1024x1024": {
+              "type": "string"
+            },
+            "image_128x128": {
+              "type": "string"
+            },
+            "image_21x21": {
+              "type": "string"
+            },
+            "image_27x27": {
+              "type": "string"
+            },
+            "image_36x36": {
+              "type": "string"
+            },
+            "image_60x60": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-users-collect",
+  "type": "object"
+}

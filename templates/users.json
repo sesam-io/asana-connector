@@ -23,14 +23,25 @@
     },
     "transform": [
       {
+        "id_expression": "{{ gid }}",
         "operation": "lookup",
         "properties": {
           "datatype": "{{@ datatype @}}"
         },
-        "replace_entity": true,
+        "replace_entity": false,
         "system": "{{@ system @}}",
-        "trace": true,
         "type": "rest"
+      },
+      {
+        "rules": {
+          "default": [
+            [
+              "merge",
+              "_S.response"
+            ]
+          ]
+        },
+        "type": "dtl"
       }
     ],
     "type": "pipe"
