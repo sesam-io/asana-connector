@@ -13,28 +13,36 @@
       "type": "string"
     },
     "photo": {
-      "description": "Object of profile picture links",
-      "properties": {
-        "image_1024x1024": {
-          "type": "string"
+      "anyOf": [
+        {
+          "description": "Object of profile picture links",
+          "properties": {
+            "image_1024x1024": {
+              "type": "string"
+            },
+            "image_128x128": {
+              "type": "string"
+            },
+            "image_21x21": {
+              "type": "string"
+            },
+            "image_27x27": {
+              "type": "string"
+            },
+            "image_36x36": {
+              "type": "string"
+            },
+            "image_60x60": {
+              "type": "string"
+            }
+          },
+          "type": "object"
         },
-        "image_128x128": {
-          "type": "string"
-        },
-        "image_21x21": {
-          "type": "string"
-        },
-        "image_27x27": {
-          "type": "string"
-        },
-        "image_36x36": {
-          "type": "string"
-        },
-        "image_60x60": {
-          "type": "string"
+        {
+          "type": "null"
         }
-      },
-      "type": "object"
+      ],
+      "description": "Can also be null if there is no photo"
     },
     "resource_type": {
       "type": "string"
