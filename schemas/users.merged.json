@@ -1,0 +1,71 @@
+{
+  "$id": "/api/pipes/xxxxxx-users-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "email": {
+      "type": "string"
+    },
+    "gid": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "photo": {
+      "anyOf": [
+        {
+          "description": "Object of profile picture links",
+          "properties": {
+            "image_1024x1024": {
+              "type": "string"
+            },
+            "image_128x128": {
+              "type": "string"
+            },
+            "image_21x21": {
+              "type": "string"
+            },
+            "image_27x27": {
+              "type": "string"
+            },
+            "image_36x36": {
+              "type": "string"
+            },
+            "image_60x60": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Can also be null if there is no photo"
+    },
+    "resource_type": {
+      "type": "string"
+    },
+    "workspaces": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "gid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "resource_type": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-users-collect",
+  "type": "object"
+}

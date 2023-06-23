@@ -1,0 +1,180 @@
+{
+  "$id": "/api/pipes/xxxxxx-tasks-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "created_at": {
+      "description": "Read-only",
+      "type": "string"
+    },
+    "followers": {
+      "description": "Read-only",
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "gid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "resource_type": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "hearts": {
+      "description": "Read-only - Deprecated",
+      "items": {
+        "properties": {
+          "gid": {
+            "type": "string"
+          },
+          "user": {
+            "properties": {
+              "gid": {
+                "type": "string"
+              },
+              "resource_type": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "likes": {
+      "description": "Read-only",
+      "items": {
+        "properties": {
+          "gid": {
+            "type": "string"
+          },
+          "user": {
+            "properties": {
+              "gid": {
+                "type": "string"
+              },
+              "resource_type": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "memberships": {
+      "description": "Read-only",
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "project": {
+            "additionalProperties": true,
+            "properties": {
+              "gid": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "resource_type": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "section": {
+            "additionalProperties": true,
+            "properties": {
+              "gid": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "resource_type": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "projects": {
+      "description": "Read-only",
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "gid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "resource_type": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "tags": {
+      "items": {
+        "properties": {
+          "gid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "resource_type": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "workspace": {
+      "description": "Read-only",
+      "additionalProperties": true,
+      "properties": {
+        "gid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "resource_type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "modified_at": {
+      "description": "Read-only",
+      "type": "string"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-tasks-collect",
+  "type": "object"
+}

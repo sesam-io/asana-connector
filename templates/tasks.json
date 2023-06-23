@@ -3,15 +3,64 @@
     "_id": "{{@ system @}}-{{@ datatype @}}-all",
     "namespaced_identifiers": false,
     "source": {
-      "operation": "list",
-      "properties": {
-        "datatype": "{{@ datatype @}}",
-        "primary_key": "gid"
-      },
-      "system": "{{@ system @}}",
-      "trace": true,
-      "type": "rest"
+      "completeness": false,
+      "dataset": "{{@ system @}}-projects-all",
+      "if_source_empty": "accept",
+      "type": "dataset"
     },
+    "transform": [
+      {
+        "id_expression": "{{ gid }}",
+        "operation": "{{@ datatype @}}_list",
+        "properties": {
+          "datatype": "{{@ datatype @}}",
+          "param": "project"
+        },
+        "replace_entity": false,
+        "system": "{{@ system @}}",
+        "type": "rest"
+      },
+      {
+        "rules": {
+          "add_id": [
+            [
+              "add",
+              "_id",
+              "_S.gid"
+            ],
+            [
+              "copy",
+              "*"
+            ]
+          ],
+          "default": [
+            [
+              "filter",
+              [
+                "neq",
+                [
+                  "count",
+                  "_S.response"
+                ],
+                0
+              ]
+            ],
+            [
+              "create",
+              [
+                "apply",
+                "add_id",
+                "_S.response"
+              ]
+            ],
+            [
+              "discard"
+            ]
+          ]
+        },
+        "type": "dtl"
+      }
+    ],
     "type": "pipe"
   },
   {
@@ -72,20 +121,6 @@
                 "_*",
                 "$*"
               ]
-            ],
-            [
-              "comment",
-              "need to reformat to key-value pair instead of dictionary to meet Asana requirements."
-            ],
-            [
-              "add",
-              "team",
-              "_S.team.gid"
-            ],
-            [
-              "add",
-              "workspace",
-              "_S.workspace.gid"
             ]
           ],
           "default": [
@@ -116,9 +151,6 @@
             "datatype": "{{@ datatype @}}"
           },
           "operation_insert_properties": {
-            "datatype": "{{@ datatype @}}"
-          },
-          "operation_list_properties": {
             "datatype": "{{@ datatype @}}"
           },
           "operation_lookup_properties": {

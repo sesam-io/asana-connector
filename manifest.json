@@ -7,8 +7,8 @@
     "projects": {
       "template": "templates/projects.json"
     },
-    "teams": {
-      "template": "templates/teams.json"
+    "tasks": {
+      "template": "templates/tasks.json"
     },
     "users": {
       "template": "templates/users.json"
@@ -24,5 +24,6 @@
     ],
     "token_url": "https://app.asana.com/-/oauth_token"
   },
+  "system": "Asana",
   "system-template": "templates/system.json"
 }
