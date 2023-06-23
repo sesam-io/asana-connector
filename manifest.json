@@ -10,6 +10,9 @@
     "tasks": {
       "template": "templates/tasks.json"
     },
+    "teams": {
+      "template": "templates/teams.json"
+    },
     "users": {
       "template": "templates/users.json"
     }
