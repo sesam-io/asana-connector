@@ -1,0 +1,173 @@
+[
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-all",
+    "namespaced_identifiers": false,
+    "source": {
+      "completeness": false,
+      "dataset": "{{@ system @}}-projects-all",
+      "if_source_empty": "accept",
+      "type": "dataset"
+    },
+    "transform": [
+      {
+        "id_expression": "{{ gid }}",
+        "operation": "{{@ datatype @}}_list",
+        "properties": {
+          "datatype": "{{@ datatype @}}",
+          "param": "project"
+        },
+        "replace_entity": false,
+        "system": "{{@ system @}}",
+        "type": "rest"
+      },
+      {
+        "rules": {
+          "add_id": [
+            [
+              "add",
+              "_id",
+              "_S.gid"
+            ],
+            [
+              "copy",
+              "*"
+            ]
+          ],
+          "default": [
+            [
+              "filter",
+              [
+                "neq",
+                [
+                  "count",
+                  "_S.response"
+                ],
+                0
+              ]
+            ],
+            [
+              "create",
+              [
+                "apply",
+                "add_id",
+                "_S.response"
+              ]
+            ],
+            [
+              "discard"
+            ]
+          ]
+        },
+        "type": "dtl"
+      }
+    ],
+    "type": "pipe"
+  },
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-collect",
+    "exclude_completeness": [
+      "{{@ system @}}-{{@ datatype @}}-share"
+    ],
+    "namespaced_identifiers": false,
+    "source": {
+      "dataset": "{{@ system @}}-{{@ datatype @}}-all",
+      "type": "dataset"
+    },
+    "transform": [
+      {
+        "properties": {
+          "operation_lookup": "lookup",
+          "operation_lookup_properties": {
+            "datatype": "{{@ datatype @}}"
+          },
+          "primary_key": "gid",
+          "rest_system": "{{@ system @}}",
+          "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
+        },
+        "template": "transform-collect-rest",
+        "type": "template"
+      }
+    ],
+    "type": "pipe"
+  },
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-share",
+    "add_namespaces": false,
+    "batch_size": 1,
+    "compaction": {
+      "keep_versions": 100
+    },
+    "exclude_completeness": [
+      "{{@ system @}}-{{@ datatype @}}-share"
+    ],
+    "namespaced_identifiers": false,
+    "sink": {
+      "deletion_tracking": false,
+      "set_initial_offset": "onload"
+    },
+    "source": {
+      "dataset": "{{@ system @}}-{{@ datatype @}}-transform",
+      "type": "dataset"
+    },
+    "transform": [
+      {
+        "rules": {
+          "create-payload": [
+            [
+              "copy",
+              "*",
+              [
+                "list",
+                "_*",
+                "$*"
+              ]
+            ]
+          ],
+          "default": [
+            [
+              "copy",
+              "*"
+            ],
+            [
+              "add",
+              "$payload",
+              [
+                "dict",
+                "data",
+                [
+                  "apply",
+                  "create-payload",
+                  "_S."
+                ]
+              ]
+            ]
+          ]
+        },
+        "type": "dtl"
+      },
+      {
+        "properties": {
+          "operation_delete_properties": {
+            "datatype": "{{@ datatype @}}"
+          },
+          "operation_insert_properties": {
+            "datatype": "{{@ datatype @}}"
+          },
+          "operation_lookup_properties": {
+            "datatype": "{{@ datatype @}}"
+          },
+          "operation_update_properties": {
+            "datatype": "{{@ datatype @}}"
+          },
+          "primary_key": "gid",
+          "rest_system": "{{@ system @}}",
+          "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
+        },
+        "template": "transform-share-rest",
+        "trace": true,
+        "type": "template"
+      }
+    ],
+    "type": "pipe"
+  }
+]

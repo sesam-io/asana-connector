@@ -7,6 +7,9 @@
     "projects": {
       "template": "templates/projects.json"
     },
+    "tasks": {
+      "template": "templates/tasks.json"
+    },
     "users": {
       "template": "templates/users.json"
     }
