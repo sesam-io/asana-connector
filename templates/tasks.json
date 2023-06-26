@@ -4,7 +4,7 @@
     "namespaced_identifiers": false,
     "source": {
       "completeness": false,
-      "dataset": "{{@ system @}}-workspaces-all",
+      "dataset": "{{@ system @}}-projects-all",
       "if_source_empty": "accept",
       "type": "dataset"
     },
@@ -14,7 +14,7 @@
         "operation": "param_list",
         "properties": {
           "datatype": "{{@ datatype @}}",
-          "param": "workspace"
+          "param": "project"
         },
         "replace_entity": false,
         "system": "{{@ system @}}",
@@ -121,11 +121,6 @@
                 "_*",
                 "$*"
               ]
-            ],
-            [
-              "add",
-              "organization",
-              "_S.organization.gid"
             ]
           ],
           "default": [
@@ -152,6 +147,9 @@
       },
       {
         "properties": {
+          "operation_delete_properties": {
+            "datatype": "{{@ datatype @}}"
+          },
           "operation_insert_properties": {
             "datatype": "{{@ datatype @}}"
           },

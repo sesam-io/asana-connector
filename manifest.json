@@ -8,7 +8,7 @@
       "template": "templates/projects.json"
     },
     "tasks": {
-      "template": "templates/teams.json"
+      "template": "templates/tasks.json"
     },
     "teams": {
       "template": "templates/teams.json"
