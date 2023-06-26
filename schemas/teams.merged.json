@@ -1,0 +1,80 @@
+{
+  "$id": "/api/pipes/xxxxxx-teams-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "description": {
+      "description": "Opt in. The description of the team.",
+      "type": "string"
+    },
+    "edit_team_name_or_description_access_level": {
+      "description": "Controls who can edit team name and description",
+      "type": "string"
+    },
+    "edit_team_visibility_or_trash_team_access_level": {
+      "description": "Controls who can edit team visibility and trash teams",
+      "type": "string"
+    },
+    "gid": {
+      "description": "Globally unique identifier of the resource, as a string.",
+      "type": "string"
+    },
+    "guest_invite_management_access_level": {
+      "description": "Controls who can accept or deny guest invites for a given team",
+      "type": "string"
+    },
+    "html_description": {
+      "description": "Opt in. The description of the team with formatting as HTML.",
+      "type": "string"
+    },
+    "join_request_management_access_level": {
+      "description": "Controls who can accept or deny join team requests for a Membership by Request team",
+      "type": "string"
+    },
+    "member_invite_management_access_level": {
+      "description": "Controls who can accept or deny member invites for a given team",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the team.",
+      "type": "string"
+    },
+    "organization": {
+      "additionalProperties": true,
+      "description": "The organization/workspace the team belongs to.",
+      "properties": {
+        "gid": {
+          "description": "Globally unique identifier of the resource, as a string.",
+          "type": "string"
+        },
+        "name": {
+          "description": "The name of the workspace.",
+          "type": "string"
+        },
+        "resource_type": {
+          "description": "The base type of this resource.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "permalink_url": {
+      "description": "A URL that points directly to the object within Asana.",
+      "type": "string"
+    },
+    "resource_type": {
+      "description": "The base type of this resource.",
+      "type": "string"
+    },
+    "team_member_removal_access_level": {
+      "description": "Controls who can remove team members",
+      "type": "string"
+    },
+    "visibility": {
+      "description": "The visibility of the team to users in the same organization",
+      "type": "string"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-teams-collect",
+  "type": "object"
+}
