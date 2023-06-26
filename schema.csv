@@ -121,3 +121,8 @@
 "Asana","users","workspaces","gid","string",""
 "Asana","users","workspaces","name","string",""
 "Asana","users","workspaces","resource_type","string",""
+"Asana","workspaces","email_domains","","array","The email domains that are associated with this workspace."
+"Asana","workspaces","gid","","string","Globally unique identifier of the resource, as a string."
+"Asana","workspaces","is_organization","","boolean","Whether the workspace is an organization."
+"Asana","workspaces","name","","string","The name of the workspace."
+"Asana","workspaces","resource_type","","string","The base type of this resource."

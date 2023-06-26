@@ -1,0 +1,32 @@
+{
+  "$id": "/api/pipes/xxxxxx-workspaces-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "email_domains": {
+      "description": "The email domains that are associated with this workspace.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "gid": {
+      "description": "Globally unique identifier of the resource, as a string.",
+      "type": "string"
+    },
+    "is_organization": {
+      "description": "Whether the workspace is an organization.",
+      "type": "boolean"
+    },
+    "name": {
+      "description": "The name of the workspace.",
+      "type": "string"
+    },
+    "resource_type": {
+      "description": "The base type of this resource.",
+      "type": "string"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-workspaces-collect",
+  "type": "object"
+}
