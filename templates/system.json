@@ -29,13 +29,7 @@
       "payload_property": "data",
       "url": "{{ properties.datatype }}/{{ entity.gid }}"
     },
-    "tasks_list": {
-      "id_expression": "{{ gid }}",
-      "method": "GET",
-      "payload_property": "data",
-      "url": "{{ properties.datatype }}?{{ properties.param }}={{ entity.gid }}"
-    },
-    "teams_list": {
+    "param_list": {
       "id_expression": "{{ gid }}",
       "method": "GET",
       "payload_property": "data",

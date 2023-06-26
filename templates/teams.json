@@ -11,7 +11,7 @@
     "transform": [
       {
         "id_expression": "{{ gid }}",
-        "operation": "{{@ datatype @}}_list",
+        "operation": "param_list",
         "properties": {
           "datatype": "{{@ datatype @}}",
           "param": "workspace"
@@ -152,6 +152,10 @@
       },
       {
         "properties": {
+          "operation_delete_properties": {
+            "datatype": "{{@ datatype @}}",
+            "comment": "Only supported by tasks"
+          },
           "operation_insert_properties": {
             "datatype": "{{@ datatype @}}"
           },
