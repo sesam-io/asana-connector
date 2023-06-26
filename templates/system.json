@@ -35,6 +35,12 @@
       "payload_property": "data",
       "url": "{{ properties.datatype }}?{{ properties.param }}={{ entity.gid }}"
     },
+    "teams_list": {
+      "id_expression": "{{ gid }}",
+      "method": "GET",
+      "payload_property": "data",
+      "url": "{{ properties.datatype }}?{{ properties.param }}={{ entity.gid }}"
+    },
     "update": {
       "method": "PUT",
       "payload_property": "data",
