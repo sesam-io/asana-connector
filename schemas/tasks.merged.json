@@ -3,6 +3,9 @@
   "$schema": "http://json-schema.org/schema#",
   "additionalProperties": true,
   "properties": {
+    "$last-modified": {
+      "type": "string"
+    },
     "actual_time_minutes": {
       "type": "null"
     },
