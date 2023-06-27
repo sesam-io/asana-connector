@@ -2,7 +2,69 @@
   "$id": "/api/pipes/xxxxxx-projects-collect/entity-types/sink",
   "$schema": "http://json-schema.org/schema#",
   "additionalProperties": true,
-  "properties": {},
+  "properties": {
+    "due_date": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "due_on": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "start_on": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "completed_at": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "completed_by": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "gid": {
+              "type": "string"
+            },
+            "resource_type": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
   "title": "Pipe sink entity type: xxxxxx-projects-collect",
   "type": "object"
 }

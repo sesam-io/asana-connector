@@ -37,6 +37,22 @@
         },
         "template": "transform-collect-rest",
         "type": "template"
+      },
+      {
+        "rules": {
+          "default": [
+            [
+              "copy",
+              "*"
+            ],
+            [
+              "add",
+              "$last-modified",
+              "_S.modified_at"
+            ]
+          ]
+        },
+        "type": "dtl"
       }
     ],
     "type": "pipe"

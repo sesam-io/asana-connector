@@ -3,6 +3,9 @@
   "$schema": "http://json-schema.org/schema#",
   "additionalProperties": true,
   "properties": {
+    "$last-modified": {
+      "type": "string"
+    },
     "archived": {
       "type": "boolean"
     },
@@ -13,10 +16,60 @@
       "type": "boolean"
     },
     "completed_at": {
-      "type": "null"
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "completed_by": {
+      "anyOf": [
+        {
+          "properties": {
+            "gid": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "resource_type": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "created_at": {
       "type": "string"
+    },
+    "created_from_template": {
+      "anyOf": [
+        {
+          "properties": {
+            "gid": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "resource_type": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Opt in"
     },
     "current_status": {
       "anyOf": [
@@ -213,10 +266,24 @@
       "type": "string"
     },
     "due_date": {
-      "type": "null"
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "due_on": {
-      "type": "null"
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "followers": {
       "items": {
@@ -284,6 +351,25 @@
     "permalink_url": {
       "type": "string"
     },
+    "project_brief": {
+      "anyOf": [
+        {
+          "properties": {
+            "gid": {
+              "type": "string"
+            },
+            "resource_type": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Opt in"
+    },
     "public": {
       "type": "boolean"
     },
@@ -291,7 +377,14 @@
       "type": "string"
     },
     "start_on": {
-      "type": "null"
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "team": {
       "additionalProperties": true,
