@@ -48,8 +48,13 @@
             [
               "add",
               "$last-modified",
-              "_S.modified_at"
+              [
+                "datetime-parse",
+                "%Y-%m-%dT%H:%M:%S.%fZ",
+                "_S.modified_at"
+              ]
             ]
+          ]
           ]
         },
         "type": "dtl"
