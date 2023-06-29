@@ -23,9 +23,12 @@
   "oauth2": {
     "login_url": "https://app.asana.com/-/oauth_authorize",
     "scopes": [
-      "default"
+      "default",
+      "openid"
     ],
-    "token_url": "https://app.asana.com/-/oauth_token"
+    "token_url": "https://app.asana.com/-/oauth_token",
+    "tenant_id_expression": ["sub"]
+
   },
   "system": "Asana",
   "system-template": "templates/system.json"
